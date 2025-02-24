@@ -85,7 +85,7 @@ const ProductHeader = () => {
               <input
                 type="text"
                 placeholder="Søk etter produkter"
-                className="w-full pl-10 pr-16 py-2 border rounded-lg"
+                className="w-[589.27px] h-16 pl-10 pr-16 py-2 border rounded-lg"
               />
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
               <button
@@ -100,7 +100,7 @@ const ProductHeader = () => {
             {isChatVisible && (
               <div
                 ref={chatContainerRef}
-                className="absolute top-full right-0 mt-2 w-[350px] max-h-[500px] overflow-auto border rounded-lg bg-white shadow-lg z-50"
+                className="absolute top-full right-0 mt-2 w-[589.27px] max-h-[500px] overflow-auto border rounded-lg bg-white shadow-lg z-50"
               >
                 <div id="voiceflow-chat"></div>
               </div>
