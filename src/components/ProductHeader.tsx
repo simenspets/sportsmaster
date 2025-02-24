@@ -8,16 +8,17 @@ const ProductHeader = () => {
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (isChatVisible) {
-      const chatContainer = chatContainerRef.current;
-      if (!chatContainer) return;
-
-      // Load Voiceflow chat only when visible
+    if (isChatVisible && chatContainerRef.current) {
       const script = document.createElement("script");
       script.textContent = `
         (function(d, t) {
           var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
           v.onload = function() {
+            const chatContainer = document.querySelector('#voiceflow-chat');
+            if (!chatContainer) {
+              console.error('Chat container not found');
+              return;
+            }
             window.voiceflow.chat.load({
               verify: { projectID: '67a3984016e45a2b5dfdb816' },
               url: 'https://general-runtime.voiceflow.com',
@@ -51,7 +52,6 @@ const ProductHeader = () => {
     }
   }, [isChatVisible]);
 
-  // Close chat when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -101,7 +101,9 @@ const ProductHeader = () => {
               <div
                 ref={chatContainerRef}
                 className="absolute top-full right-0 mt-2 w-[350px] max-h-[500px] overflow-auto border rounded-lg bg-white shadow-lg z-50"
-              />
+              >
+                <div id="voiceflow-chat"></div>
+              </div>
             )}
           </div>
 
@@ -125,4 +127,3 @@ const ProductHeader = () => {
 };
 
 export default ProductHeader;
-
