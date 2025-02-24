@@ -20,7 +20,7 @@ const ProductHeader = () => {
               return;
             }
             window.voiceflow.chat.load({
-              verify: { projectID: '67a3984016e45a2b5dfdb816' },
+              verify: { projectID: '67891dc58be20586cd1445e8' },
               url: 'https://general-runtime.voiceflow.com',
               versionID: 'production',
               assistant: {
