@@ -70,8 +70,8 @@ const ProductHeader = () => {
 
   return (
     <header className="bg-white">
-      <div className="max-w-7xl mx-auto px-6 py-2">
-        <div className="flex items-center justify-between gap-8">
+      <div className="max-w-7xl mx-auto px-6 py-1">
+        <div className="flex items-center justify-between gap-4">
           <a href="/" className="flex-shrink-0">
             <img
               src="https://sportsmaster.no/media/logo/stores/1/desktop-221122.png"
@@ -86,7 +86,7 @@ const ProductHeader = () => {
                 <input
                   type="text"
                   placeholder="Søk etter produkter..."
-                  className="w-full h-12 pl-12 pr-24 bg-transparent rounded-full focus:outline-none"
+                  className="w-full h-10 pl-12 pr-24 bg-transparent rounded-full focus:outline-none"
                 />
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
                 <button
@@ -109,16 +109,16 @@ const ProductHeader = () => {
             )}
           </div>
 
-          <div className="flex items-center gap-6">
-            <button className="flex flex-col items-center gap-1">
+          <div className="flex items-center gap-4">
+            <button className="flex flex-col items-center gap-0.5">
               <User className="h-6 w-6" />
               <span className="text-xs">Min side</span>
             </button>
-            <button className="flex flex-col items-center gap-1">
+            <button className="flex flex-col items-center gap-0.5">
               <Heart className="h-6 w-6" />
               <span className="text-xs">Ønskeliste</span>
             </button>
-            <button className="flex flex-col items-center gap-1 relative">
+            <button className="flex flex-col items-center gap-0.5 relative">
               <ShoppingCart className="h-6 w-6" />
               <span className="text-xs">Handlevogn</span>
               <span className="absolute -top-1 -right-1 bg-blue-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
