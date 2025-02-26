@@ -76,7 +76,7 @@ const ProductHeader = () => {
             <img
               src="https://sportsmaster.no/media/logo/stores/1/desktop-221122.png"
               alt="Sportsmaster"
-              className="h-12"
+              className="h-40"
             />
           </a>
 
