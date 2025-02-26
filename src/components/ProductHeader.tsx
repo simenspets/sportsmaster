@@ -1,5 +1,5 @@
 
-import { Search, Sparkles, User, ShoppingCart, Menu } from "lucide-react";
+import { Search, Sparkles, User, ShoppingCart, Heart } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const ProductHeader = () => {
@@ -69,38 +69,40 @@ const ProductHeader = () => {
   }, []);
 
   return (
-    <header className="bg-white border-b">
+    <header className="bg-white">
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between gap-8">
           <a href="/" className="flex-shrink-0">
             <img
               src="https://sportsmaster.no/media/logo/stores/1/desktop-221122.png"
               alt="Sportsmaster"
-              className="h-40"
+              className="h-28"
             />
           </a>
 
-          <div ref={searchContainerRef} className="flex-1 max-w-[589.27px] relative">
-            <div className="relative bg-gray-50 rounded-full">
-              <input
-                type="text"
-                placeholder="Søk etter produkter..."
-                className="w-full h-16 pl-12 pr-24 py-2 bg-gray-50 rounded-full focus:outline-none"
-              />
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-              <button
-                onClick={() => setIsChatVisible(!isChatVisible)}
-                className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-1 text-blue-600 hover:text-blue-700"
-              >
-                <Sparkles className="h-4 w-4" />
-                <span className="text-sm">AI-søk</span>
-              </button>
+          <div ref={searchContainerRef} className="flex-1 max-w-[650px] relative">
+            <div className="relative">
+              <div className="flex items-center bg-gray-100 rounded-full">
+                <input
+                  type="text"
+                  placeholder="Søk etter produkter..."
+                  className="w-full h-12 pl-12 pr-24 bg-transparent rounded-full focus:outline-none"
+                />
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+                <button
+                  onClick={() => setIsChatVisible(!isChatVisible)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-1 text-blue-600 hover:text-blue-700"
+                >
+                  <Sparkles className="h-4 w-4" />
+                  <span className="text-sm">AI-søk</span>
+                </button>
+              </div>
             </div>
 
             {isChatVisible && (
               <div
                 ref={chatContainerRef}
-                className="absolute top-full right-0 mt-2 w-[589.27px] max-h-[500px] overflow-auto border rounded-lg bg-white shadow-lg z-50"
+                className="absolute top-full right-0 mt-2 w-full max-h-[500px] overflow-auto border rounded-lg bg-white shadow-lg z-50"
               >
                 <div id="voiceflow-chat"></div>
               </div>
@@ -108,16 +110,20 @@ const ProductHeader = () => {
           </div>
 
           <div className="flex items-center gap-6">
-            <button className="flex items-center gap-2 text-sm">
-              <User className="h-5 w-5" />
-              <span>Min side</span>
+            <button className="flex flex-col items-center gap-1">
+              <User className="h-6 w-6" />
+              <span className="text-xs">Min side</span>
             </button>
-            <button className="flex items-center gap-2 text-sm">
-              <ShoppingCart className="h-5 w-5" />
-              <span>Handlevogn</span>
+            <button className="flex flex-col items-center gap-1">
+              <Heart className="h-6 w-6" />
+              <span className="text-xs">Ønskeliste</span>
             </button>
-            <button className="lg:hidden">
-              <Menu className="h-6 w-6" />
+            <button className="flex flex-col items-center gap-1 relative">
+              <ShoppingCart className="h-6 w-6" />
+              <span className="text-xs">Handlevogn</span>
+              <span className="absolute -top-1 -right-1 bg-blue-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                0
+              </span>
             </button>
           </div>
         </div>
