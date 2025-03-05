@@ -149,7 +149,7 @@ const Index = () => {
 
               <div id="dafaq-container" className="relative w-full mb-8">
                 <LoadingOverlay />
-                <div className="absolute top-2 right-2 z-50">
+                <div className="absolute top-0 right-0 z-50 p-2">
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger>
